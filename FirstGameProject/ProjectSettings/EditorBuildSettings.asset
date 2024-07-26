@@ -6,10 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Endless Cube.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2ed3103b046fc1b4b987189daca10027
+  - enabled: 1
+    path: Assets/Scenes/Endless Cube.unity
     guid: 9691d05e4102ab44aa423130adcaa130
   - enabled: 1
-    path: Assets/Level2.unity
+    path: Assets/Scenes/Level2.unity
     guid: f60cac81ebbaed04abe60fac00bfa80f
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 64fc19fc73d13f04cbe5389f96e34b51
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -384,6 +384,7 @@
 "Assets/Scripts/followPlayer.cs"
 "Assets/Scripts/jumpMethod.cs"
 "Assets/Scripts/LevelComplete.cs"
+"Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/MovingObstacle.cs"
 "Assets/Scripts/PlayerCollision.cs"
 "Assets/Scripts/PlayerMovement.cs"

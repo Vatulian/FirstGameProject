@@ -4,27 +4,45 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
-
-    public float restartDelay = 2f;
+    public float restartDelay = 2f; // Bekleme süresi
 
     public GameObject CompleteLevelUI;
 
-    public void CompleteLevel ()
+    public void CompleteLevel()
     {
         CompleteLevelUI.SetActive(true);
     }
 
-   public void GameOver ()
+    public void GameOver()
     {
-       if (!gameHasEnded)
+        if (!gameHasEnded)
         {
             gameHasEnded = true;
             Debug.Log("Game Over");
-            Invoke("Restart", restartDelay);
+            PlayerPrefs.SetString("LastScene", SceneManager.GetActiveScene().name); // keep current scene in the memory
+            Invoke("LoadGameOverScene", restartDelay); // wait 2 sec and load GameOver scene
         }
     }
-    void Restart()
+
+    void LoadGameOverScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("GameOver"); // "GameOver" scene load
+    }
+
+    public void Retry()
+    {
+        string lastScene = PlayerPrefs.GetString("LastScene");
+        SceneManager.LoadScene(lastScene); // Load the last scene
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu"); 
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting the game!");
+        Application.Quit();
     }
 }
